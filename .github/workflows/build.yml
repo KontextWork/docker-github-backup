@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  IMAGE_FQDN: ghcr.io/kontextwork/github-backup
+  IMAGE_FQDN: ghcr.io/KontextWork/github-backup
 
 jobs:
   docker:

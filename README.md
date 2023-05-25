@@ -9,6 +9,7 @@ Features
 
 ## Example
 
+All the variables
 ```bash
 # your github organization name
 export ORG=<yourorg>
@@ -19,12 +20,17 @@ export LOCAL_FOLDER=/mnt/backups/github
 # --private for private repos
 # --fork for forked repos
 export ASPECTS_TO_BACKUP=--pulls --pull-comments --pull-details -fork --private
+```
+
+prepare the target folder on your host
+```bash
 mkdir -p $LOCAL_FOLDER
+# the user inside the docker container runs under 5000:5000 and needs write permissions on the local folder
 sudo chown 5000:5000 $LOCAL_FOLDER
+```
 
-# --organization as for "is organzation"
-# -i incremental
-
+run a backup (run once command)
+```bash
 # backup a single repo called yourrepo
 docker run --rm -v $LOCAL_FOLDER:/home/ghbackup/backups ghcr.io/kontextwork/github-backup $ORG --organization -t $TOKEN $ASPECTS_TO_BACKUP --incremental -o /home/ghbackup/backups -R yourrepo
 
