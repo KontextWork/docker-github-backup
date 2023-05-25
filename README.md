@@ -13,11 +13,11 @@ chown 5000:5000 /mnt/backups/github
 # --organization as for "is organzation"
 # -i incremental
 # -R drupalwiki_e2e_tests # for this one repo only
-docker run --rm -v /mnt/backups/github:/home/ghbackup/backups backup KontextWork -t $TOKEN --pulls --pull-comments --pull-details--fork --private --incremental --organization -o /home/ghbackup/backups -R drupalwiki_e2e_tests
+docker run --rm -v /mnt/backups/github:/home/ghbackup/backups backup KontextWork -t $TOKEN --pulls --pull-comments --pull-details- -fork --private --incremental --organization -o /home/ghbackup/backups -R drupalwiki_e2e_tests
 
 # the entire organization
 # -R drupalwiki_e2e_tests # for this one repo only
-docker run --rm -v /mnt/backups/github:/home/ghbackup/backups backup KontextWork -t $TOKEN --pulls --pull-comments --pull-details--fork --private --incremental --organization -o /home/ghbackup/backups
+docker run --rm -v /mnt/backups/github:/home/ghbackup/backups backup KontextWork -t $TOKEN --pulls --pull-comments --pull-details --fork --private --incremental --organization -o /home/ghbackup/backups
 ```
 
 ## Alternatives
