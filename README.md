@@ -46,6 +46,8 @@ handle the cronjob outside the docker-image, it is not designed to run stateful.
 
 ## Cloud Alternatives
 
+This list is by now means complete or curated - just things we found. If you have any good findings, add them :)
+
 - https://gitprotect.io/
 - https://rewind.com/pricing/
 
