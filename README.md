@@ -1,6 +1,11 @@
 ## WAT
 
-Backups the given github organization using https://github.com/josegonzalez/python-github-backup
+Backups the given github organization using https://github.com/josegonzalez/python-github-backupit
+
+Features
+ - wraps the python library without leaking any dependencies into the host system
+ - runs as non root to ensure it runs isolated and can only write only designated folders
+  
 
 ## Example
 
@@ -21,11 +26,16 @@ sudo chown 5000:5000 $LOCAL_FOLDER
 # -i incremental
 
 # backup a single repo called yourrepo
-docker run --rm -v $LOCAL_FOLDER:/home/ghbackup/backups ghcr.io/kontextwork/docker-github-backup $ORG --organization -t $TOKEN $ASPECTS_TO_BACKUP --incremental -o /home/ghbackup/backups -R yourrepo
+docker run --rm -v $LOCAL_FOLDER:/home/ghbackup/backups ghcr.io/kontextwork/github-backup $ORG --organization -t $TOKEN $ASPECTS_TO_BACKUP --incremental -o /home/ghbackup/backups -R yourrepo
 
 # backup the entire organization
-docker run --rm -v $LOCAL_FOLDER:/home/ghbackup/backups ghcr.io/kontextwork/docker-github-backup $ORG --organization -t $TOKEN $ASPECTS_TO_BACKUP --incremental -o /home/ghbackup/backups
+docker run --rm -v $LOCAL_FOLDER:/home/ghbackup/backups ghcr.io/kontextwork/github-backup $ORG --organization -t $TOKEN $ASPECTS_TO_BACKUP --incremental -o /home/ghbackup/backups
 ```
+
+## Usage
+
+You usually will run the one-off command to run the backup and remove the docker-container right away. You need to 
+handle the cronjob outside the docker-image, it is not designed to run stateful.
 
 ## Cloud Alternatives
 
