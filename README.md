@@ -5,7 +5,7 @@ Backups the given github organization using https://github.com/josegonzalez/pyth
 Features
  - wraps the python library without leaking any dependencies into the host system
  - runs as non root to ensure it runs isolated and can only write only designated folders
-  
+ - git lfs support is included
 
 ## Example
 
@@ -19,7 +19,8 @@ export TOKEN=<pat>
 export LOCAL_FOLDER=/mnt/backups/github
 # --private for private repos
 # --fork for forked repos
-export ASPECTS_TO_BACKUP=--pulls --pull-comments --pull-details -fork --private
+# --repositories 
+export ASPECTS_TO_BACKUP=--pulls --pull-comments --pull-details --repositories  --fork --private
 ```
 
 prepare the target folder on your host
