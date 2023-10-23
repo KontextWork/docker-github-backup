@@ -1,6 +1,6 @@
 ## WAT
 
-Backups the given github organization using https://github.com/josegonzalez/python-github-backupit
+Backups the given github organization using [https://github.com/josegonzalez/python-github-backupit](https://github.com/josegonzalez/python-github-backup)
 
 Features
  - wraps the python library without leaking any dependencies into the host system
