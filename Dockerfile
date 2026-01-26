@@ -1,8 +1,8 @@
-FROM debian:trixie-slim
+FROM python:3.12-trixie
 
 RUN apt update \
     && apt upgrade -y \
-    && apt-get install -y bash ca-certificates tzdata git git-lfs python3 python3-pip tzdata curl \
+    && apt-get install -y bash ca-certificates tzdata git git-lfs tzdata curl \
     && pip3 install github-backup && github-backup -v 
 
 # git lfs support
